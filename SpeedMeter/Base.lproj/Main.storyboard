@@ -1,0 +1,141 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="15505" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="e47-a8-VUX">
+    <device id="retina5_5" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15509"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Speed Meter-->
+        <scene sceneID="FnU-uV-KCA">
+            <objects>
+                <viewController id="JkW-JE-8OE" customClass="SpeedLimiterVC" customModule="SpeedMeter" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="lFy-3I-KNK">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="692"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <stackView hidden="YES" opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="equalSpacing" spacing="12" translatesAutoresizingMaskIntoConstraints="NO" id="YMf-ZB-5eB">
+                                <rect key="frame" x="25" y="179.33333333333334" width="364" height="333.33333333333326"/>
+                                <subviews>
+                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="ic_location_empty" translatesAutoresizingMaskIntoConstraints="NO" id="XOJ-Jj-twT">
+                                        <rect key="frame" x="0.0" y="0.0" width="364" height="250"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="250" id="5mJ-Wj-6JU"/>
+                                            <constraint firstAttribute="width" constant="250" id="Wlt-kG-wZe"/>
+                                        </constraints>
+                                    </imageView>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Location needed for getting device speed" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="97T-AL-vX2">
+                                        <rect key="frame" x="0.0" y="262" width="364" height="23.333333333333314"/>
+                                        <fontDescription key="fontDescription" name="Avenir-Book" family="Avenir" pointSize="17"/>
+                                        <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="BDm-J7-aWZ">
+                                        <rect key="frame" x="0.0" y="297.33333333333326" width="364" height="36"/>
+                                        <fontDescription key="fontDescription" name="Avenir-Book" family="Avenir" pointSize="17"/>
+                                        <state key="normal" title="Open Settings"/>
+                                        <connections>
+                                            <action selector="openSettings:" destination="JkW-JE-8OE" eventType="touchUpInside" id="h46-rl-Rgw"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                            </stackView>
+                            <stackView hidden="YES" opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="equalSpacing" alignment="center" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="H58-mk-YoK">
+                                <rect key="frame" x="10" y="10" width="394" height="672"/>
+                                <subviews>
+                                    <view contentMode="scaleAspectFit" translatesAutoresizingMaskIntoConstraints="NO" id="dJX-ds-0U2" customClass="SpeedMeterView" customModule="SpeedMeter" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="0.0" width="394" height="250"/>
+                                        <color key="backgroundColor" red="0.13611021640000001" green="0.1678396761" blue="0.21356645229999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="250" id="Zw1-ZA-Za2"/>
+                                        </constraints>
+                                        <userDefinedRuntimeAttributes>
+                                            <userDefinedRuntimeAttribute type="number" keyPath="speed">
+                                                <real key="value" value="0.0"/>
+                                            </userDefinedRuntimeAttribute>
+                                        </userDefinedRuntimeAttributes>
+                                    </view>
+                                    <pickerView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="gUL-43-kbC">
+                                        <rect key="frame" x="37" y="456" width="320" height="216"/>
+                                        <userDefinedRuntimeAttributes>
+                                            <userDefinedRuntimeAttribute type="color" keyPath="textColor">
+                                                <color key="value" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                            </userDefinedRuntimeAttribute>
+                                        </userDefinedRuntimeAttributes>
+                                    </pickerView>
+                                </subviews>
+                                <constraints>
+                                    <constraint firstItem="dJX-ds-0U2" firstAttribute="leading" secondItem="H58-mk-YoK" secondAttribute="leading" id="A0R-hK-b1L"/>
+                                    <constraint firstAttribute="trailing" secondItem="dJX-ds-0U2" secondAttribute="trailing" id="AiP-sf-ZiL"/>
+                                </constraints>
+                            </stackView>
+                        </subviews>
+                        <color key="backgroundColor" red="0.13611021640000001" green="0.1678396761" blue="0.21356645229999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="HJJ-4N-g38" firstAttribute="trailing" secondItem="YMf-ZB-5eB" secondAttribute="trailing" constant="25" id="5Ql-vZ-MPD"/>
+                            <constraint firstItem="H58-mk-YoK" firstAttribute="leading" secondItem="HJJ-4N-g38" secondAttribute="leading" constant="10" id="A4k-qg-mk1"/>
+                            <constraint firstItem="HJJ-4N-g38" firstAttribute="bottom" secondItem="H58-mk-YoK" secondAttribute="bottom" constant="10" id="Aoc-dc-H7p"/>
+                            <constraint firstItem="YMf-ZB-5eB" firstAttribute="centerY" secondItem="lFy-3I-KNK" secondAttribute="centerY" id="M8I-Gg-Pgb"/>
+                            <constraint firstItem="YMf-ZB-5eB" firstAttribute="leading" secondItem="HJJ-4N-g38" secondAttribute="leading" constant="25" id="MDa-H9-kaI"/>
+                            <constraint firstItem="YMf-ZB-5eB" firstAttribute="centerX" secondItem="lFy-3I-KNK" secondAttribute="centerX" id="gtg-HR-K5M"/>
+                            <constraint firstItem="H58-mk-YoK" firstAttribute="top" secondItem="HJJ-4N-g38" secondAttribute="top" constant="10" id="lPz-bf-ZwC"/>
+                            <constraint firstAttribute="trailing" secondItem="H58-mk-YoK" secondAttribute="trailing" constant="10" id="zYC-rJ-hN4"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="HJJ-4N-g38"/>
+                    </view>
+                    <navigationItem key="navigationItem" title="Speed Meter" id="xsy-0G-jYm">
+                        <barButtonItem key="backBarButtonItem" title="back" id="cZT-if-aru"/>
+                        <barButtonItem key="rightBarButtonItem" id="IXH-YI-yLf">
+                            <switch key="customView" opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" on="YES" id="Vbv-wc-qoc">
+                                <rect key="frame" x="343" y="6.6666666666666679" width="51" height="31.000000000000004"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="onTintColor" red="0.24668455119999999" green="0.64101648330000005" blue="0.94844406839999995" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <connections>
+                                    <action selector="enableSpeedWarningSound:" destination="JkW-JE-8OE" eventType="valueChanged" id="ssM-nx-CN7"/>
+                                </connections>
+                            </switch>
+                        </barButtonItem>
+                    </navigationItem>
+                    <connections>
+                        <outlet property="emptyStateLocation" destination="YMf-ZB-5eB" id="DoF-tD-ChN"/>
+                        <outlet property="speedLimiterStack" destination="H58-mk-YoK" id="ChB-IO-asc"/>
+                        <outlet property="speedMeter" destination="dJX-ds-0U2" id="zgj-sD-8ly"/>
+                        <outlet property="speedPicker" destination="gUL-43-kbC" id="uxn-Md-8hR"/>
+                        <outlet property="warningSwitch" destination="Vbv-wc-qoc" id="iBA-UD-3rp"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Tw5-Q9-oQh" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="273.91304347826087" y="777.71739130434787"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="RWq-Ht-WDr">
+            <objects>
+                <navigationController storyboardIdentifier="speed_limiter" automaticallyAdjustsScrollViewInsets="NO" id="e47-a8-VUX" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" barStyle="black" translucent="NO" id="ste-go-Pwu">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                        <color key="backgroundColor" red="0.044075191020000001" green="0.47726500030000002" blue="0.59909564260000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <color key="barTintColor" red="0.13611021640000001" green="0.1678396761" blue="0.21356645229999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <textAttributes key="titleTextAttributes">
+                            <fontDescription key="fontDescription" name="Avenir-Heavy" family="Avenir" pointSize="20"/>
+                            <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        </textAttributes>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="JkW-JE-8OE" kind="relationship" relationship="rootViewController" id="HXR-Ex-ITb"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Pca-QD-HEE" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-633.33333333333337" y="777.71739130434787"/>
+        </scene>
+    </scenes>
+    <resources>
+        <image name="ic_location_empty" width="72" height="72"/>
+    </resources>
+</document>
